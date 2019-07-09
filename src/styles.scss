@@ -1,0 +1,388 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+body{
+  margin: 0;
+}
+.th_list{
+  max-width: 960px;
+  width: 100%;
+  display: inline-block;
+  margin: 0 auto;
+  margin-bottom: -3px;
+  // border:1px solid #e1e2e4;
+  border-bottom:none;
+  position: relative;
+  overflow: hidden;
+  >header{
+    width: 12.5%;
+    float: left;
+    background-color:#f1f1f1;
+    // border-right: 1px solid #e1e2e4;
+    box-sizing: border-box;
+    border-top:1px solid #e1e2e4;
+    border-bottom:1px solid #e1e2e4;
+    border-left:1px solid #e1e2e4;
+    height: 402px;
+  }
+  table{
+    width: 87.5%;
+    float: left;
+    border-collapse: collapse;
+    position: relative;
+    left: -2px;
+  }
+}
+thead,tbody,tr{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+}
+th,td{
+  padding: 0px;
+  width: 14.2%;
+  height: 50px;
+  padding: 5px;
+  color:#444;
+  font-size: 14px;
+  box-sizing:border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border:1px solid #e1e2e4;
+  border-top:none;
+  &+th,&+td{
+    border-left:none;
+  }
+  &.on{
+    background-color:#f7f7f7;
+  }
+  &.now{
+    background-color: #fff9e3;
+    border:1px solid #fe8b88;
+  }
+}
+td{
+  span{
+    &.disn{
+      display: none;
+    }
+  }
+}
+th{
+  background-color: #eaedf2;
+}
+.arrow{
+  position: absolute;
+  top:0px;
+  left:0px;
+  &:before{
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: -1px;
+    left: 0;
+    border-top: 10px solid #ff8e26;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #ff8e26;
+  }
+  color: #ff8e26;
+  font-size: 12px;
+  padding-left: 20px;
+ 
+}
+
+ul{
+  width: 100%;
+  display: inline-block;
+  margin: 0px ;
+  padding: 0px;
+  list-style-type: none;
+}
+li{
+  width: 100%;
+  height: 50px;
+  position: relative;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 5px;
+  &+li{
+   border-top: 1px solid #e1e2e4;
+   box-sizing: border-box;
+  }
+  &:nth-child(1){
+    background-color: #eaedf2;
+  }
+  >span{
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    top:0px;
+    bottom:0px;
+    height: 20px;
+    margin: auto;
+    font-size: 14px;
+    color:#666;
+  
+  }
+  >p{
+    width: 100%;
+    float: left;
+    margin: 0px;
+    color:#666;
+    font-size: 14px;
+    text-align: right;
+    span{
+      width: 100%;
+      display: block;
+      text-align-last: left;
+    }
+  }
+ 
+}
+.smallg{
+  font-size: 12px;
+  color: #24a07c;
+  text-align: right;
+  line-height: 1;
+  position: absolute;
+  top:5px;
+  right: 5px;
+  height: 50px;
+}
+
+tr{
+  &.on{
+    td{
+      background-color: #9e9e9e7a;
+     }
+    
+  }
+}
+
+.nextbtn,.prevbtn{
+  position: absolute;
+  top:0px;
+  bottom:0px;
+  margin: auto;
+  height: 40px;
+  width: 20px;
+  display: none;
+  z-index: 7;
+  img{
+    width: 100%;
+  }
+  &.disn{
+    display: none  !important;
+  }
+}
+.nextbtn{
+  right: 0px;
+}
+.prevbtn{
+  left: 0px;
+}
+
+@media (max-width:720px){
+  .App{
+    margin-bottom: -4px;
+  }
+  .th_list{
+    border:none;
+    header{
+      position: absolute;
+      top:0px;
+      left:0px;
+      z-index: 5;
+    }
+    &.col1{
+      header,table{
+        width: 50vw;
+      }
+      table{
+        margin-left: 0;
+        position: relative;
+        left: 50vw;
+          &.slider1-1{
+            margin-left: -50vw;
+          }
+          &.slider1-2{
+            margin-left: -100vw;
+          }
+          &.slider1-3{
+            margin-left: -150vw;
+          }
+          &.slider1-4{
+            margin-left: -200vw;
+          }
+          &.slider1-5{
+            margin-left: -250vw;
+          }
+          &.slider1-6{
+            margin-left: -300vw;
+          }
+      }
+      td,th,{
+        width: 50vw;
+      }
+      .prevbtn{
+        left: 50vw;
+      }
+    }
+    &.col2{
+      header,table{
+        width: 33.33vw;
+      }
+      table{
+        margin-left: 0;
+        position: relative;
+        left: 33.33vw;
+          &.slider1-1{
+            margin-left: -33.33vw;
+          }
+          &.slider1-2{
+            margin-left: -66.66vw;
+          }
+          &.slider1-3{
+            margin-left: -99.99vw;
+          }
+          &.slider1-4{
+            margin-left: -133.32vw;
+          }
+          &.slider1-5{
+            margin-left: -166.65vw;
+          }
+   
+
+          &.slider2-2{
+            margin-left: -66.66vw;
+          }
+          &.slider2-4{
+            margin-left: -133.32vw;
+          }
+          &.slider2-5{
+            margin-left: -166.65vw;
+          }
+      }
+      td,th{
+        width: 33.33vw;
+      }
+      .prevbtn{
+        left: 33.33vw;
+      }
+    }
+    &.col3{
+      header,table{
+        width: 25vw;
+      }
+      table{
+        margin-left: 0;
+        position: relative;
+        left: 25vw;
+        &.slider1-1{
+          margin-left: -25vw;
+        }
+        &.slider1-2{
+          margin-left: -50vw;
+        }
+        &.slider1-3{
+          margin-left: -75vw;
+        }
+        &.slider1-4{
+          margin-left: -100vw;
+        }
+        &.slider1-5{
+          margin-left: -125vw;
+        }
+
+        &.slider2-2{
+          margin-left: -50vw;
+        }
+        &.slider2-4{
+          margin-left: -100vw;
+        }
+
+        &.slider3-1{
+          margin-left: -75vw;
+        }
+        &.slider3-3{
+          margin-left: -75vw;
+        }
+        &.slider3-4{
+          margin-left: -100vw;
+        }
+      }
+      td,th{
+        width: 25vw;
+      }
+      .prevbtn{
+        left: 25vw;
+      }
+    }
+    &.col4{
+      header,table{
+        width: 20vw;
+      }
+      table{
+        margin-left: 0;
+        position: relative;
+        left: 20vw;
+        &.slider1-1{
+          margin-left: -20vw;
+        }
+        &.slider1-2{
+          margin-left: -40vw;
+        }
+        &.slider1-3{
+          margin-left: -60vw;
+        }
+        &.slider1-4{
+          margin-left: -80vw;
+        }
+
+        &.slider2-1{
+          margin-left: -40vw;
+        }
+        &.slider2-2{
+          margin-left: -40vw;
+        }
+
+        &.slider2-3{
+          margin-left: -60vw;
+        }
+        &.slider3-3{
+          margin-left: -60vw;
+        }
+
+        &.slider4-3{
+          margin-left: -60vw;
+        }
+      }
+      td,th{
+        width: 20vw;
+      }
+      .prevbtn{
+        left: 20vw;
+      }
+    }
+    &:hover{
+      .nextbtn,.prevbtn{
+        display: block;
+      }
+    }
+
+  }
+
+
+}
+
