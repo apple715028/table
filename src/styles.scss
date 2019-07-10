@@ -65,7 +65,7 @@ th,td{
   &.on{
     background-color:#f7f7f7;
   }
-  &.now{
+  &:hover,&.now{
     background-color: #fff9e3;
     border:1px solid #fe8b88;
   }
